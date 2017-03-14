@@ -1,6 +1,6 @@
 import re
 
-from tag_tool import *
+from tests.tag_tool import *
 
 def _empty_to_match_all(x):
  if x=="": 

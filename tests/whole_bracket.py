@@ -1,7 +1,7 @@
 import re, os
 # 引入写好的标签检索函数与标签解析工具包
-from query_from_all_tags2 import *
-from tag_tool import *
+from tests.query_from_all_tags2 import *
+from tests.tag_tool import *
 
 def extract_html_element_by_attr(html_code, conditions):
 
