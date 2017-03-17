@@ -71,7 +71,7 @@ def query_tag_by_attr(html_code, _attr_conditions):
         conditions = _conditions
     else:
         try:
-            conditions = dict.fromkeys(_conditions, '')
+            conditions = dict.fromkeys(_conditionqs, '')
         except:
             raise TypeError("Argument 'conditions' should be a dict, set or list, whose keys are attributes\' names")
 
@@ -94,4 +94,15 @@ def query_tag_by_attr(html_code, _attr_conditions):
         if weight == n:
             result.append(item)
 
+    return result
+
+
+def query_tag_by_tagname(html_code, tagname):
+    result=[]
+    tags=re.findall(r'<.+?>', html_code)
+    
+    for item in tags:
+        if re.match(r'^<%s' % tagname, item):
+            result.append(item)
+            
     return result
